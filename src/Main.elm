@@ -1,34 +1,50 @@
 module Main exposing (..)
 
-import Browser
-import Html exposing (Html, button, div, text)
-import Html.Events exposing (onClick)
+import Css
+import Css.Global
+import Html.Styled as Html
+import Html.Styled.Attributes as Attr
+import Tailwind.Breakpoints as Breakpoints
+import Tailwind.Utilities as Tw
 
 main =
-  Browser.sandbox { init = init, update = update, view = view }
+    Html.toUnstyled <|
+        Html.div [ Attr.css [ Tw.bg_gray_50 ] ]
+            [ -- This will give us the standard tailwind style-reset as well as the fonts
+              Css.Global.global Tw.globalStyles
+            , Html.div
+                [ Attr.css
+                    [ Tw.mt_8
+                    , Tw.flex
 
-type alias Model = Int
+                    -- We use breakpoints like this
+                    -- However, you need to order your breakpoints from high to low :/
+                    , Breakpoints.lg [ Tw.mt_0, Tw.flex_shrink_0 ]
+                    ]
+                ]
+                [ Html.div [ Attr.css [ Tw.inline_flex, Tw.rounded_md, Tw.shadow ] ]
+                    [ Html.a
+                        [ Attr.css
+                            [ Tw.inline_flex
+                            , Tw.items_center
+                            , Tw.justify_center
+                            , Tw.px_5
+                            , Tw.py_3
+                            , Tw.border
+                            , Tw.border_transparent
+                            , Tw.text_base
+                            , Tw.font_medium
+                            , Tw.rounded_md
+                            , Tw.text_white
+                            , Tw.bg_indigo_600
 
-init : Model
-init =
-  0
+                            -- We can use hover styles via elm-css :)
+                            , Css.hover [ Tw.bg_indigo_700 ]
+                            ]
+                        , Attr.href "#"
+                        ]
+                        [ Html.text "Get started" ]
+                    ]
+                ]
+            ]
 
-type Msg = Increment | Decrement
-
-update : Msg -> Model -> Model
-update msg model =
-  case msg of
-    Increment ->
-      model + 1
-
-    Decrement ->
-      model - 1
-
-
-view : Model -> Html Msg
-view model =
-  div []
-    [ button [ onClick Decrement ] [ text "-" ]
-    , div [] [ text (String.fromInt model) ]
-    , button [ onClick Increment ] [ text "+" ]
-    ]

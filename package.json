@@ -9,8 +9,12 @@
     "utility-types": "^3.10.0"
   },
   "devDependencies": {
+    "@parcel/core": "^2.3.2",
     "@parcel/transformer-elm": "2.3.2",
-    "elm": "^0.19.1-5"
+    "autoprefixer": "^10.4.2",
+    "elm": "^0.19.1-5",
+    "postcss": "^8.0.9",
+    "tailwindcss": "^3.0.23"
   },
   "scripts": {
     "test": "elm-test"
