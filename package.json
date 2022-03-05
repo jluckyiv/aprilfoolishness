@@ -1,0 +1,28 @@
+{
+  "name": "aprilfoolishness",
+  "version": "1.0.0",
+  "description": "Eric's April Foolishness Dashboard",
+  "main": "index.js",
+  "dependencies": {
+    "elm-tooling": "^1.7.0",
+    "parcel": "^2.3.2",
+    "utility-types": "^3.10.0"
+  },
+  "devDependencies": {
+    "@parcel/transformer-elm": "2.3.2",
+    "elm": "^0.19.1-5"
+  },
+  "scripts": {
+    "test": "elm-test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jluckyiv/aprilfoolishness.git"
+  },
+  "author": "Jackson Lucky",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/jluckyiv/aprilfoolishness/issues"
+  },
+  "homepage": "https://github.com/jluckyiv/aprilfoolishness#readme"
+}
