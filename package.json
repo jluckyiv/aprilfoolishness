@@ -2,7 +2,6 @@
   "name": "aprilfoolishness",
   "version": "1.0.0",
   "description": "Eric's April Foolishness Dashboard",
-  "main": "index.js",
   "dependencies": {
     "elm-tooling": "^1.7.0",
     "parcel": "^2.3.2",
@@ -17,7 +16,8 @@
     "tailwindcss": "^3.0.23"
   },
   "scripts": {
-    "test": "elm-test"
+    "test": "elm-test",
+    "build": "parcel build index.html"
   },
   "repository": {
     "type": "git",
